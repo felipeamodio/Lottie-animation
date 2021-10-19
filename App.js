@@ -1,13 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, SafeAreaView } from 'react-native';
+
+import rocket from './rocket.json';
+import Lottie from 'lottie-react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text style={styles.text}>Rocket</Text>
+      <Lottie source={rocket} autoPlay loop style={styles.image} resizeMode="contain" autoSize />
+    </SafeAreaView>
   );
 }
 
@@ -18,4 +20,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  image: {
+    width: 500,
+    height: 500
+  },
+  text: {
+    fontSize: 40,
+    fontStyle: 'italic',
+    fontWeight: '600',
+    color: '#2E384D',
+    textShadowColor: '#2E384D',
+    textShadowOffset: {width: 2, height: 2},
+    textShadowRadius: 1
+  }
 });
